@@ -17,22 +17,22 @@ Each session has three 50-minute work blocks, two 10-minute breaks between block
 - Planned: the exercise has not yet been assigned.
 - Assistance and verification details belong in `LEARNING_LOG.md`.
 
-Current position: Session 1, exercise 1.1, reactive status practice.
+Current position: Session 2, exercise 2.1, component boundaries with typed props and events.
 
 ## Session 1: reactive state and derived lists
 
 | Exercise | Topics and task | Acceptance or checkpoint | Status |
 | --- | --- | --- | --- |
 | 1.0 Setup | Minimal Vue 3, TypeScript, SFC, and script setup app | App builds and local preview starts; tutor handles setup only | Reviewed |
-| 1.1 Reactive status | `ref`, `.value`, interpolation, and `@click`; change and reset one status | Both transitions work in the browser | Planned |
-| 1.2 Typed state | String unions, `type` versus `interface`, annotations versus assertions, typed refs and handler arguments | Type checking passes; Marc correctly predicts rejection of a status outside the union | Planned |
-| 1.3 Seeded list | Typed application model, reactive array, `v-for`, stable ID keys, optional fields, and `v-if` | Three synthetic records render required fields; missing optional fields leave no empty bullets; old demo controls removed | Planned |
-| 1.4 Search | Labelled input, `v-model`, and `computed`; search company or role | Ignore case and surrounding whitespace; empty query shows all; unmatched query shows an empty message; preserve source records | Planned |
-| 1.5 Status filter | Typed select value and combined derived filtering | All option shows every status; search and status conditions both apply; controls can be reset | Planned |
-| 1.6 Counts | Derived totals and counts for all five statuses | Counts reflect the full application collection; visible result count reflects active filters | Planned |
-| 1.7 Independent rebuild | Rebuild filtering without copying the first implementation; explain dependency tracking | Behaviour still passes; identify which reactive reads make the computed value update | Planned |
+| 1.1 Reactive status | `ref`, `.value`, interpolation, and `@click`; change and reset one status | Both transitions work in the browser | Reviewed |
+| 1.2 Typed state | String unions, `type` versus `interface`, annotations versus assertions, typed refs and handler arguments | Type checking passes; Marc correctly predicts rejection of a status outside the union | Reviewed with typing assistance |
+| 1.3 Seeded list | Typed application model, reactive array, `v-for`, stable ID keys, optional fields, and `v-if` | Three synthetic records render required fields; missing optional fields leave no empty bullets; old demo controls removed | Reviewed after cleanup feedback |
+| 1.4 Search | Labelled input, `v-model`, and `computed`; search company or role | Ignore case and surrounding whitespace; empty query shows all; unmatched query shows an empty message; preserve source records | Reviewed after feedback and a guard snippet |
+| 1.5 Status filter | Typed select value and combined derived filtering | All option shows every status; search and status conditions both apply; controls can be reset | Reviewed after typing feedback |
+| 1.6 Counts | Derived totals and counts for all five statuses | Counts reflect the full application collection; visible result count reflects active filters | Reviewed after computed-pattern assistance |
+| 1.7 Independent rebuild | Rebuild filtering without copying the first implementation; explain dependency tracking | Behaviour still passes; identify which reactive reads make the computed value update | Reviewed with feedback and explanation assistance |
 
-Use short checkpoints to practise ref access, const bindings, dependency tracking, and stable key identity after implementation.
+Pending recall: explain `.value` versus template unwrapping and why a const ref can change its inner value. Stable-key identity was explained by the tutor and still needs an independent explanation.
 
 Suggested blocks: state/model/list; search/filter/counts; independent rebuild and debugging. Current exercises may take longer, so move unfinished work to the next session if needed.
 
@@ -40,7 +40,7 @@ Suggested blocks: state/model/list; search/filter/counts; independent rebuild an
 
 | Exercise | Topics and task | Acceptance or checkpoint | Status |
 | --- | --- | --- | --- |
-| 2.1 Component boundaries | Move list rendering into a component; practise typed props and events | Parent owns application records; child requests changes through events | Planned |
+| 2.1 Component boundaries | Move list rendering into a component; practise typed props and events | Parent owns application records; child requests changes through events | Assigned |
 | 2.2 Validated creation | Form draft, field bindings, validation, submit event, and reset | Required values are valid; invalid submission leaves records unchanged; valid submission creates one unique record | Planned |
 | 2.3 List/detail selection | Selection by ID and a detail view | Select a record and display its fields without duplicating the stored record | Planned |
 | 2.4 Data-flow debugging | Diagnose an introduced parent/child ownership mistake | Explain the problem and repair it independently | Planned |
