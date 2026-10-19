@@ -1,0 +1,24 @@
+{
+  "name": "polysports-vue2-drills",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "test:replacement": "node --test tests/order-replacement.test.js",
+    "test:vuex": "node --test tests/orders-vuex.test.js",
+    "test:async": "node --test tests/orders-async.test.js",
+    "test:vitest": "vitest run --config vitest.config.js",
+    "mock:dev": "vite --config mock/vite.config.js --host 127.0.0.1 --port 5174 --strictPort",
+    "test:mock": "vitest run --config mock/vitest.config.js",
+    "mock:build": "vite build --config mock/vite.config.js"
+  },
+  "dependencies": {
+    "vue": "2.7.16",
+    "vuex": "3.6.2"
+  },
+  "devDependencies": {
+    "vite": "7.3.1",
+    "vitest": "4.1.6"
+  }
+}
