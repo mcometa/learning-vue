@@ -1,17 +1,8 @@
 <script setup lang="ts">
 import { ref, reactive, computed } from "vue"
-
-type StatusType = 'applied' | 'interviewing' | 'offered' | 'rejected' | 'withdrawn'
-
-interface JobApplication {
-  id: string
-  company: string
-  role: string
-  applicationDate: string
-  jobUrl?: string
-  notes?: string
-  status: StatusType
-}
+import type { JobApplication, StatusType } from "./types"
+import JobApplicationList from './components/JobApplicationList.vue'
+import JobApplicationForm from './components/JobApplicationForm.vue'
 
 const applications = reactive<JobApplication[]>(
 
@@ -76,6 +67,15 @@ const statusCounts = computed(() => {
   }
 })
 
+const selectedApplicationId = ref<string>()
+function handleSelectedApplication(id: string) {
+  selectedApplicationId.value = id
+}
+
+function handleAddJobApplication(data: JobApplication) {
+  applications.push(data)
+}
+
 </script>
 
 <template>
@@ -97,6 +97,8 @@ const statusCounts = computed(() => {
   </p>
   <p>Showing {{ visibleApplicationCount }} of {{ totalApplicationCount }}</p>
 
+  <p>selected application id = {{selectedApplicationId}}</p>
+
   <p>
       <label for="statusDropdown">Status:</label>
       <select id="statusDropdown" v-model="status">
@@ -110,22 +112,10 @@ const statusCounts = computed(() => {
   </p>
 
   <p><button @click="reset">Reset</button></p>
-  <ul>
-      <li v-for="application in filteredApplications" :key="application.id">
-          <p>{{application.id}}</p>
-          <ul>
-              <li>{{application.company}}</li>
-              <li>{{application.role}}</li>
-              <li>{{application.status}}</li>
-              <li>{{application.applicationDate}}</li>
-              <li v-if="application.jobUrl">{{application.jobUrl}}</li>
-              <li v-if="application.notes">{{application.notes}}</li>
-          </ul>
-      </li>
-      <li v-if="filteredApplications.length === 0">
-          No applications match your search
-      </li>
-  </ul>
+
+  <JobApplicationForm @addJobApplication="handleAddJobApplication" />
+
+  <JobApplicationList :applications="filteredApplications" @select="handleSelectedApplication" />
 </template>
 
 <style scoped>
