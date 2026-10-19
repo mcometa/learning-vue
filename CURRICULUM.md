@@ -2,9 +2,9 @@
 
 ## Purpose and schedule
 
-Prepare Marc, an experienced React and TypeScript engineer, to build and explain a small Vue application during an interview. Use the Job Application Tracker for guided practice, followed by independent variations and timed mocks.
+Active plan as of October 18, 2026: read `INTERVIEW_SPRINT.md`. The candidate brief establishes a live Vue 2 debugging session, Vuex, Vite, Vitest, mixed Options API and Composition API components, and migration discussion. Marc reports the interview is Tuesday, October 20. The remaining original schedule and feature-building order below are paused in favor of the sprint. Previous work stays recorded as reviewed or incomplete.
 
-The employer uses Vue and Laravel, but its versions and exam format are unknown. This is our preparation plan, not a claim about the employer's exam.
+The following is the original tracker curriculum. It remains a record of our work and possible later practice. The employer's exact package versions are still unknown.
 
 Use five core sessions of three hours each within one calendar week. Reserve the other two days for other interview preparation, rest, or targeted catch-up. Sessions need not be consecutive. The total allocation is 15 hours, including breaks and checkpoints.
 
@@ -17,7 +17,7 @@ Each session has three 50-minute work blocks, two 10-minute breaks between block
 - Planned: the exercise has not yet been assigned.
 - Assistance and verification details belong in `LEARNING_LOG.md`.
 
-Current position: Session 2, exercise 2.1, component boundaries with typed props and events.
+Current position: Marc ended tutoring October 20 to rest before the interview. Do not continue or prompt the unanswered drill 12 checkpoint unless he explicitly resumes. If he requests more pre-interview recall, resume the saved component orders versus visibleOrders question; if he returns after the interview, start with his account of actual tasks/outcomes. Exact assistance and recall gaps are in LEARNING_LOG.md. Earlier sprint work was assisted and independent mastery remains unconfirmed; no independent B3 coding variation was executed. B2 code is accepted with twelve tests passing against the original API and main browser flows verified, with assistance recorded; elapsed time remains unknown. Personal Teams/Devtools setup is unverified. Tracker exercise 2.2 is paused with corrections pending. No reminder or autonomous continuation scheduled.
 
 ## Session 1: reactive state and derived lists
 
@@ -40,8 +40,8 @@ Suggested blocks: state/model/list; search/filter/counts; independent rebuild an
 
 | Exercise | Topics and task | Acceptance or checkpoint | Status |
 | --- | --- | --- | --- |
-| 2.1 Component boundaries | Move list rendering into a component; practise typed props and events | Parent owns application records; child requests changes through events | Assigned |
-| 2.2 Validated creation | Form draft, field bindings, validation, submit event, and reset | Required values are valid; invalid submission leaves records unchanged; valid submission creates one unique record | Planned |
+| 2.1 Component boundaries | Move list rendering into a component; practise typed props and events | Parent owns application records; child requests changes through events | Reviewed after typing feedback |
+| 2.2 Validated creation | Form draft, field bindings, validation, submit event, and reset | Required values are valid; invalid submission leaves records unchanged; valid submission creates one unique record | Paused; reviewed with corrections pending |
 | 2.3 List/detail selection | Selection by ID and a detail view | Select a record and display its fields without duplicating the stored record | Planned |
 | 2.4 Data-flow debugging | Diagnose an introduced parent/child ownership mistake | Explain the problem and repair it independently | Planned |
 
@@ -84,13 +84,13 @@ Use the first and third work blocks for mocks and the middle block for repair an
 
 ## Final topic: Vue 2 to Vue 3 migration concepts
 
-Status: noted, awaiting details from Marc.
+Status: promoted to the active interview sprint based on the candidate brief supplied October 18.
 
-Add a concepts-focused migration lesson after the existing curriculum. Marc will provide more context next time. Specific coverage, exercises, and time allocation remain undecided; do not begin this lesson yet or assume a migration implementation task.
+Prioritize version and dependency inspection, incremental migration, compatibility-build suitability and limits, behavior changes, tests, and preserving working Options API components. See `INTERVIEW_SPRINT.md`. A full application migration is not an established requirement of the interview.
 
 ## Deferred scope
 
-Router, Pinia, advanced slots, Nuxt, SSR, and Laravel/backend implementation stay deferred unless employer information requires them or time remains after the core work. Styling stays secondary to usable, labelled controls.
+Router, Pinia, advanced slots, Nuxt, SSR, and Laravel/backend implementation stay deferred unless new employer information requires them. Vuex is now required by the supplied brief. Completing the tracker is not a prerequisite for the active debugging mock. Styling stays secondary to usable, labelled controls.
 
 ## Maintenance
 
